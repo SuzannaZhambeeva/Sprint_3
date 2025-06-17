@@ -20,6 +20,14 @@ class OnlineSalesRegisterCollector:
     def number(self, value):
         self.__number_items = value
     
+    @property
+    def item_price(self):
+        return self.__item_price
+
+    @property
+    def tax_rate(self):
+        return self.__tax_rate
+    
     def add_item_to_cheque(self, name):
         if len(name) == 0 or len(name) > 40:
             raise ValueError('Нельзя добавить товар, если в его названии нет символов или их больше 40')
